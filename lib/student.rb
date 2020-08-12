@@ -72,7 +72,7 @@ class Student
     FROM students
     WHERE students.name = ?
     SQL
-    found_record = DB[:conn].execute(sql, name)[0]
+    found_record = DB[:conn].execute(sql, name).first
     Student.new_from_db(found_record)
   end
 end
